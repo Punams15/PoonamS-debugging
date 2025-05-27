@@ -43,7 +43,7 @@ function checkGuess() {
     if (guess < targetNumber) {
       tooLowMessage.style.display = '';
     } else {
-      tooLowMessage.style.display = '';
+      tooHighMessage.style.display = '';
     }
 
     const remainingAttempts = maxNumberOfAttempts - attempts;
@@ -52,7 +52,7 @@ function checkGuess() {
     numberOfGuessesMessage.innerHTML = `You guessed ${guess}. <br> ${remainingAttempts} guesses remaining`;
   }
 //*3)Incorrect comparison operator...Should be === (three equals).//
-  if (attempts ==== maxNumberOfAttempts) {
+  if (attempts === maxNumberOfAttempts) {
     submitButton.disabled = true;
     guessInput.disabled = true;
   }
@@ -63,12 +63,12 @@ function checkGuess() {
 }
 /*1)Wrong loop condition in hideAllMessages.....Should be < messages.length to avoid out-of-range errors.*/
 function hideAllMessages() {
-  for (let elementIndex = 0; elementIndex <= messages.length; elementIndex++) { 
+  for (let elementIndex = 0; elementIndex < messages.length; elementIndex++) { 
     messages[elementIndex].style.display = 'none';
   }
 }
 /*2)Incorrect function keyword spelling*/
-funtion setup() {
+function setup() {
   // Get random number
   targetNumber = getRandomNumber(1, 100);
   console.log(`target number: ${targetNumber}`);
@@ -77,7 +77,7 @@ funtion setup() {
   maxNumberOfAttempts = 0;
 /*5)disable spelling mistake*/
   // Enable the input and submit button
-  submitButton.disabeld = false;
+  submitButton.disabled = false;
   guessInput.disabled = false;
 
   hideAllMessages();
