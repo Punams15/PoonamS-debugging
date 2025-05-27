@@ -51,7 +51,7 @@ function checkGuess() {
     numberOfGuessesMessage.style.display = '';
     numberOfGuessesMessage.innerHTML = `You guessed ${guess}. <br> ${remainingAttempts} guesses remaining`;
   }
-
+//*3)Incorrect comparison operator...Should be === (three equals).//
   if (attempts ==== maxNumberOfAttempts) {
     submitButton.disabled = true;
     guessInput.disabled = true;
@@ -61,13 +61,13 @@ function checkGuess() {
 
   resetButton.style.display = '';
 }
-
+/*1)Wrong loop condition in hideAllMessages.....Should be < messages.length to avoid out-of-range errors.*/
 function hideAllMessages() {
-  for (let elementIndex = 0; elementIndex <= messages.length; elementIndex++) {
+  for (let elementIndex = 0; elementIndex <= messages.length; elementIndex++) { 
     messages[elementIndex].style.display = 'none';
   }
 }
-
+/*2)Incorrect function keyword spelling*/
 funtion setup() {
   // Get random number
   targetNumber = getRandomNumber(1, 100);
