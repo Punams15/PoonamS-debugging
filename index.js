@@ -38,7 +38,7 @@ function checkGuess() {
     submitButton.disabled = true;
     guessInput.disabled = true;
   }
-
+/*6) else showing wrong for high,the else should show tooHighMessage.*/
   if (guess !== targetNumber) {
     if (guess < targetNumber) {
       tooLowMessage.style.display = '';
@@ -72,10 +72,10 @@ funtion setup() {
   // Get random number
   targetNumber = getRandomNumber(1, 100);
   console.log(`target number: ${targetNumber}`);
-
+/*4)accidentally set the max attempts to 0 instead of resetting current attempts.*/
   // Reset number of attempts
   maxNumberOfAttempts = 0;
-
+/*5)disable spelling mistake*/
   // Enable the input and submit button
   submitButton.disabeld = false;
   guessInput.disabled = false;
@@ -88,3 +88,7 @@ submitButton.addEventListener('click', checkGuess);
 resetButton.addEventListener('click', setup);
 
 setup();
+
+
+/*7)When attempts reach max, the message "You reached the max number of guesses" (maxGuessesMessage) is not shown.
+/*8)The reset button’s display should be hidden at the start and only shown after the game ends or a guess is submitted...Reset button shown immediately on 1st guess instead of after game ends
